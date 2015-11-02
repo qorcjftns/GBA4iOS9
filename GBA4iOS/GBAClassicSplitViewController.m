@@ -30,7 +30,7 @@
         
         self.romTableViewControllerIsVisible = NO;
         
-        self.romTableViewController = [[GBAROMTableViewController alloc] init];
+        self.romTableViewController = [[GBAROMTableViewController alloc] initWithNibName:Nil bundle:nil];
         self.romTableViewController.appearanceDelegate = self;
         UINavigationController *navigationController = RST_CONTAIN_IN_NAVIGATION_CONTROLLER(self.romTableViewController);
         

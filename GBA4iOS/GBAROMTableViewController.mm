@@ -21,7 +21,7 @@
 #import "NSFileManager+ForcefulMove.h"
 #import "GBAWebViewController.h"
 
-#import <CrashlyticsFramework/Crashlytics.h>
+#import <CrashlyticsFramework/Crashlytics/Crashlytics.h>
 
 #import "UIAlertView+RSTAdditions.h"
 #import "UIActionSheet+RSTAdditions.h"
@@ -591,6 +591,8 @@ typedef NS_ENUM(NSInteger, GBAVisibleROMType) {
     {
         return;
     }
+    
+    self.directory_contents_changed_queue = dispatch_queue_create("com.rileytestut.GBA4iOS.directory_contents_changed_queue", DISPATCH_QUEUE_SERIAL);
     
     dispatch_async(self.directory_contents_changed_queue, ^{
         
